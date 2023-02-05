@@ -15,7 +15,7 @@ class NapTime extends StatefulWidget {
 }
 
 class _NapTimeState extends State<NapTime> {
-  int _selectedNapMinutes = 0;
+  int _selectedNapMinutes = 5;
 
   var textStyle = TextStyle(
       fontSize: 60,
@@ -90,77 +90,86 @@ class _NapTimeState extends State<NapTime> {
                   },
                 ),
               ),
-              SizedBox(height: 40),
+              SizedBox(height: 30),
               NeumorphicButton(
                   style: NeumorphicStyle(depth: 10, color: Colors.transparent),
                   onPressed: () {
                     presetSetAlarm(_selectedNapMinutes);
                   },
                   child: Text(
-                    "Nap Time",
+                    "Set Timer",
                     style: textStyle.copyWith(fontSize: 20, shadows: []),
                   )),
               SizedBox(height: 40),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  NeumorphicButton(
-                      padding: EdgeInsets.all(20),
-                      style: NeumorphicStyle(
-                        depth: 10,
-                        color: Colors.transparent,
-                        boxShape: NeumorphicBoxShape.circle(),
-                      ),
-                      onPressed: () {
-                        presetSetAlarm(15);
-                      },
-                      child: Text(
-                        "15",
-                        style: textStyle.copyWith(fontSize: 24, shadows: []),
-                      )),
-                  NeumorphicButton(
-                      padding: EdgeInsets.all(20),
-                      style: NeumorphicStyle(
-                        depth: 10,
-                        color: Colors.transparent,
-                        boxShape: NeumorphicBoxShape.circle(),
-                      ),
-                      onPressed: () {
-                        presetSetAlarm(30);
-                      },
-                      child: Text(
-                        "30",
-                        style: textStyle.copyWith(fontSize: 24, shadows: []),
-                      )),
-                  NeumorphicButton(
-                      padding: EdgeInsets.all(20),
-                      style: NeumorphicStyle(
-                        depth: 10,
-                        color: Colors.transparent,
-                        boxShape: NeumorphicBoxShape.circle(),
-                      ),
-                      onPressed: () {
-                        presetSetAlarm(45);
-                      },
-                      child: Text(
-                        "45",
-                        style: textStyle.copyWith(fontSize: 24, shadows: []),
-                      )),
-                  NeumorphicButton(
-                      padding: EdgeInsets.all(20),
-                      style: NeumorphicStyle(
-                        depth: 10,
-                        color: Colors.transparent,
-                        boxShape: NeumorphicBoxShape.circle(),
-                      ),
-                      onPressed: () {
-                        presetSetAlarm(90);
-                      },
-                      child: Text(
-                        "90",
-                        style: textStyle.copyWith(fontSize: 24, shadows: []),
-                      )),
-                ],
+              NeumorphicText(
+                "Preset Timers",
+                style: NeumorphicStyle(color: Colors.white),
+                textStyle: NeumorphicTextStyle(fontSize: 22),
+              ),
+              SizedBox(height: 20),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    NeumorphicButton(
+                        padding: EdgeInsets.all(20),
+                        style: NeumorphicStyle(
+                          depth: 10,
+                          color: Colors.transparent,
+                          boxShape: NeumorphicBoxShape.circle(),
+                        ),
+                        onPressed: () {
+                          presetSetAlarm(15);
+                        },
+                        child: Text(
+                          "15",
+                          style: textStyle.copyWith(fontSize: 24, shadows: []),
+                        )),
+                    NeumorphicButton(
+                        padding: EdgeInsets.all(20),
+                        style: NeumorphicStyle(
+                          depth: 10,
+                          color: Colors.transparent,
+                          boxShape: NeumorphicBoxShape.circle(),
+                        ),
+                        onPressed: () {
+                          presetSetAlarm(30);
+                        },
+                        child: Text(
+                          "30",
+                          style: textStyle.copyWith(fontSize: 24, shadows: []),
+                        )),
+                    NeumorphicButton(
+                        padding: EdgeInsets.all(20),
+                        style: NeumorphicStyle(
+                          depth: 10,
+                          color: Colors.transparent,
+                          boxShape: NeumorphicBoxShape.circle(),
+                        ),
+                        onPressed: () {
+                          presetSetAlarm(45);
+                        },
+                        child: Text(
+                          "45",
+                          style: textStyle.copyWith(fontSize: 24, shadows: []),
+                        )),
+                    NeumorphicButton(
+                        padding: EdgeInsets.all(20),
+                        style: NeumorphicStyle(
+                          depth: 10,
+                          color: Colors.transparent,
+                          boxShape: NeumorphicBoxShape.circle(),
+                        ),
+                        onPressed: () {
+                          presetSetAlarm(90);
+                        },
+                        child: Text(
+                          "90",
+                          style: textStyle.copyWith(fontSize: 24, shadows: []),
+                        )),
+                  ],
+                ),
               ),
             ],
           ),
